@@ -58,11 +58,7 @@ export default function Home(props) {
                 username: username,
                 password: password,
             }).then((response)=>{
-                console.log(response.config.data);
                 let temp = response.config.data;
-                let parsed = JSON.parse(temp);
-                //permanent= parsed.username;
-                //console.log(permanent);
                 setRedirect(true); 
             })
         }catch(err)

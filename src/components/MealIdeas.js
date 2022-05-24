@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import MealList from "./MealList";
+import axios from "axios";
 import "./MealIdeas.css"
 
 export default function MealIdeas(){
@@ -13,14 +14,15 @@ export default function MealIdeas(){
     }
 
     function getMealData(){
-        fetch(
-            `https://api.spoonacular.com/mealplanner/generate?apiKey=45b219a8dd0a4f418d941b5042e1345a&timeFrame=day&targetCalories=${calories}`
-        )
-        .then((response)=>response.json())
-        .then((data)=>{
-            setMealData(data);
-            console.log(data);
-        }).catch(()=>console.log("error"))
+        try{
+            axios.get('http://localhost:80/FoodTracker-backend/recipe.php',{params: { ingr: calories }})
+            .then((data)=>{
+                setMealData(data.data);
+                console.log(data.data);
+            })
+        } catch(err){
+            console.error(err.message);
+        }
     }
 
     return(
