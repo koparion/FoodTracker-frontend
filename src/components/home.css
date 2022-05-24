@@ -1,0 +1,10 @@
+.screen { height: 821px; width:1440px; position:absolute; }
+.left { height:821px; width: 50%; float:left; background-color:lightgrey;}
+.right { height:50%; width: 50%; float:right; }
+.center { height:400px; width:450px;  margin-left:150px; margin-top:7px; }
+.center2{ height:400px; width:450px; margin-top:190px; margin-left: 100px; }
+.screen .right .center2  h1 { font-family: cursive; font-size: 50px;}
+input { padding-top:4px; padding-bottom:4px; width:150px; border:1px solid grey;}
+#reg{ width:300px; }
+.btn{ width:77px; padding-top:5px; padding-bottom:5px; background:skyblue; border:none; cursor:pointer;}
+.btnbtn { width:395px; margin-top:10px; padding-top:5px; padding-bottom:5px; border:none; background:skyblue; cursor:pointer;}

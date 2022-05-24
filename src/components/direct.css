@@ -1,0 +1,15 @@
+.main {
+    margin: auto;
+    width: 50%;
+    margin-top: 100px;
+}
+.text{ margin-top:200px; text-align: center;}
+.calorieTracker {
+    margin-top:20px;
+}
+.calorieTracker button { width:100%; height:100px; font-size: 25px; background-color:#fffafa; border:2px solid grey; cursor: pointer;}
+.mealTracker{
+    margin-top:20px;
+
+}
+.mealTracker button { width:100%; height:100px; font-size: 25px; background-color:#fffafa; border:2px solid grey;cursor: pointer;}
