@@ -1,18 +1,21 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 export default function Meal( {meal} ){
 
     const [imageUrl,setImageUrl] = useState("");
 
     useEffect(()=>{
-        fetch(
-            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=45b219a8dd0a4f418d941b5042e1345a&includeNutrition=false`
-        ).then((response)=>response.json())
-        .then((data)=>{
-            setImageUrl(data.image)
-        }).catch(()=>{
-            console.log("error")
-        })
+        try{
+            axios.get('http://localhost:80/FoodTracker-backend/meal.php',{params: { ingr: meal.id }})
+            .then((data)=>{
+                setImageUrl(data.data.image);
+                console.log(data.data.image);
+            })
+        } catch(err){
+            console.error(err.message);
+        }
+        
     },[meal.id])
 
     return (
